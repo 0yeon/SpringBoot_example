@@ -1,0 +1,11 @@
+package com.example.demo.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+// Controller -> View
+// RestController -> API
+@RestController
+@RequestMapping()
+public class TodoController {
+	
+}

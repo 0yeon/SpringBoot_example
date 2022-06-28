@@ -1,0 +1,23 @@
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.TodoEntity;
+
+@Controller
+// ¹®ÀÚ¿­À» º¸¿©ÁÜ (ResponseBody ¾È½áµµµÊ)
+@RestController
+@RequestMapping("test")
+public class TestController {
+	@GetMapping
+	public String getDefault() {
+//		TodoEntity todo = TodoEntity.builder().id("park").userId("LEE").title("¹ä¸Ô±â").build();
+		
+		TodoEntity todo = new TodoEntity("a", "kim", "°øºÎ", false);
+		return todo.toString();
+	}
+
+}

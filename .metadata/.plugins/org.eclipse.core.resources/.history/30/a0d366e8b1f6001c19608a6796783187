@@ -1,0 +1,33 @@
+package com.example.demo.dto;
+
+import com.example.demo.persistence.TodoEntity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+// 어노테이션 4가지 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
+public class TodoDTO {
+	
+	private String id;
+	private String title;
+	private boolean done;
+	
+	// 메서드 하나
+	public TodoDTO(final TodoEntity entity) {
+		this.id = entity.getId();
+		this.title = entity.getTitle();
+		this.done = entity.isDone();
+	}
+	
+	public static TodoEntity toEntity(final TodoDTO dto) {
+		
+	}
+
+}

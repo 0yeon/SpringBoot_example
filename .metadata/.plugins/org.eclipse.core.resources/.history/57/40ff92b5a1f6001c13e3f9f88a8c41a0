@@ -1,0 +1,15 @@
+server.port=8082
+
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
+spring.datasource.username=comstudy21
+spring.datasource.password=comstudy21
+
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.generate-ddl=false
+spring.jpa.show-sql=true
+spring.jpa.database=oracle
+
+logging.level.org.hibernate=info
+
+spring.jpa.database-platform=org.hibernate.dialect.Oracle11gDialect

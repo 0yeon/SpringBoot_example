@@ -1,0 +1,16 @@
+package com.example.demo.model;
+
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
+@Builder
+@NoArgsConstructor
+@Data
+@RequiredArgsConstructor
+
+public class TodoEntity {
+
+
+}

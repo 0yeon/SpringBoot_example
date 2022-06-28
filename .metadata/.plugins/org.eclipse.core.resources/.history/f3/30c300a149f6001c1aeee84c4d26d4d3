@@ -1,0 +1,36 @@
+package com.example.demo.persistence;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.TodoEntity;
+
+// 테이블명, 프라이머리키 타입
+// 이 레파지토리 자체가 DB
+// CRUD 레파지토리 상속받음
+@Repository
+public interface TodoRepository extends JpaRepository<TodoEntity, String> {
+   //@Query("select * from todo")
+   List<TodoEntity> findByUserId(String userId);
+   
+   public List<TodoEntity> create(final TodoEntity entity) {
+		if(entity == null) {
+			log.warn("Entity cannot be null.");
+			throw new RuntimeException("Entity cannot be null.");
+		}
+		
+		if(entity.getUserId() == null) {
+			log.warn("Unkown user.");
+			throw new RuntimeException("Unkown user.");
+		}
+		
+		repository.save(entity);
+		
+		log.info("Entity Id : {} is saved.", entity.getId());
+		return repository.findByUserId(entity.getUserId());
+	}
+
+}
+

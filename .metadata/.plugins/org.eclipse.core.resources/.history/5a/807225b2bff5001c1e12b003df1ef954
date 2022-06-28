@@ -1,0 +1,8 @@
+package com.example.demo.dto;
+
+// ResponseDTO -> DTOµÈ¿« π≠¿Ω. 
+public class ResponseDTO<T> {
+	private String error;
+	private List<T> data;
+
+}

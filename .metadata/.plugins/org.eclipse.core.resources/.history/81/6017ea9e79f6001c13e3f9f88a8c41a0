@@ -1,0 +1,7 @@
+server.port = 8082
+
+
+spring.datasource.driver-class-name=oracle.jdbc.driver.Oracle
+spring.datasource.url=jdbc:oracle:thin:@172.21.160.1
+spring.datasource.username=comstudy21
+spring.datasource.password=comstudy21

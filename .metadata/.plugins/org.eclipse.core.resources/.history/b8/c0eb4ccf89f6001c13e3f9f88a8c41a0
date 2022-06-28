@@ -1,0 +1,32 @@
+package com.example.demo.dto;
+
+import com.example.demo.model.TodoEntity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class TodoDTO {
+	private String id;
+	private String title;
+	private boolean done;
+
+	// 서비스 쪽으로 보낼 때 모든 정보가 안가야 되는 경우가 있고
+	// 공개되지 말아야 할 부분을 여기에 넣는다.
+	// 일종의 잠금장치
+	// 참조값, 단방향으로 되게 해서 entity 값을 변경 못하게 만든다.
+	public TodoDTO(final TodoEntity entity) {
+		this.id = entity.getId();
+		this.title = entity.getTitle();
+		this.done = entity.isDone();
+	}
+	
+	public static TodoEntity toEntity(final TodoDTO dto) {
+		return TodoEntity.builder().id(dto.getId()).title(dto.getTitle()).done(dto.isDone()).build();
+	}
+}

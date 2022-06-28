@@ -1,0 +1,10 @@
+package com.example.demo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.model.TodoEntity;
+
+// ID 프라이머리 타입이 String
+public interface TodoRepository extends JpaRepository<TodoEntity, String> {
+
+}
