@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: comstudy21
+    password: comstudy21
+    driver-class-name: oracle.driver.OracleDriver
+
+mybatis:
+  mapper-locations: query/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
